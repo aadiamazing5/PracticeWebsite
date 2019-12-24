@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript</title>
+    <meta charset="utf-8">
+    <script src="review.js">
+  </script>
+    <title>Javascript</title>
+    <!-- These are the links to the fonts, and also bootstrap-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+
+    <!-- This line below is the link to the scroll animation css, delete if it doesnt work-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <nav>
+      <div class="bar">
+      <a href="https://www.retard.com">  <img class="logo" src="images/curvedlogo.PNG" > </a>
+
+      <ul>
+        <li>  <a href="angularstuff.html">Angular</a> </li>
+        <li>  <a class="activejs" href="jsstuff.html">JS</a> </li>
+        <li>  <a href="cssstuff.html">CSS</a> </li>
+        <li>  <a href="htmlstuff.html">HTML</a> </li>
+        <li>  <a href="index.html">Home</a> </li>
+
+      </ul>
+      </div>
+    </nav>
+
+    <div class="slider-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <div class="slider-text">
+              <h1>Javascript Practice.</h1>
+              <h2>Scroll down.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slider-area2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <div class="slider-text2">
+
+<!-- This is the Surprise Button-->
+
+              <div class="universal-container">
+                  <h3>Surprise Button</h3>
+                    <div class="content">
+                      <div class="surprise">
+                        <button onclick="surpriseButton()" class="surprise-button">Click me for a Surprise!</button>
+                        <script>
+                        function surpriseButton() {
+                          var name = prompt ("What is your name?")
+                          if (name == "aadi"){
+                            alert ("You are not gay! You are also very cool!")
+                          }
+                          else if (name == "Aadi") {
+                            alert ("You are not gay! You are also very cool")
+                          }
+                          else if (name == "jerry") {
+                            alert ("Thats a cool name :)")
+                          }
+                          else if (name == "Jerry") {
+                            alert ("Thats a cool name :)")
+                          }
+                          else if (name == "yatin") {
+                              alert ("Nigger ass bitch")
+                            }
+                          else if (name == "Yatin") {
+                              alert ("Nigger ass bitch")
+                            }
+                          else {
+                            alert ("I like that name :)")
+                          }
+
+                        }
+                        </script>
+                      </div>
+                    </div>
+              </div>
+
+<!-- This is the Clock-->
+
+              <div class="universal-container">
+                  <h3>JS Clock</h3>
+                    <div class="content">
+                        <div class="clock" onload="showTime()">
+                          <script>
+                          function startTime() {
+                            var today = new Date();
+                            var h = today.getHours();
+                            var m = today.getMinutes();
+                            var s = today.getSeconds();
+                            m = checkTime(m);
+                            s = checkTime(s);
+                            document.getElementById('txt').innerHTML =
+                            h + " : " + m + " : " + s;
+                            var t = setTimeout(startTime, 100);
+                            }
+                          function checkTime(i) {
+                            if (i < 10) {i = "0" + i};
+                            return i;
+                          }
+                          </script>
+
+                            </head>
+                            <body onload="startTime()">
+                            <div id="txt"></div>
+                        </div>
+                    </div>
+              </div>
+
+<!-- This is the Image Slider-->
+
+              <div class="universal-container">
+                  <h3>Image Slider</h3>
+                    <div class="content">
+                      <div class="image-slider">
+                        <!-- Slideshow container -->
+                          <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+                            <div class="mySlides fade">
+                              <img src="images/nature1.jpeg" class="slider-image">
+                            </div>
+
+                            <div class="mySlides fade">
+                              <img src="images/nature2.jpeg" class="slider-image">
+                            </div>
+
+                            <div class="mySlides fade">
+                              <img src="images/nature3.jpeg" class="slider-image">
+                            </div>
+
+                            <div class="mySlides fade">
+                              <img src="images/nature4.jpeg" class="slider-image">
+                            </div>
+
+                            <script>
+                            var slideIndex = 1;
+                            showSlides(slideIndex);
+                            // Next/previous controls
+                            function plusSlides(n) {
+                              showSlides(slideIndex += n);
+                            }
+
+                            // Thumbnail image controls
+                            function currentSlide(n) {
+                              showSlides(slideIndex = n);
+                            }
+
+                            function showSlides(n) {
+                              var i;
+                              var slides = document.getElementsByClassName("mySlides");
+                              var dots = document.getElementsByClassName("dot");
+                              if (n > slides.length) {slideIndex = 1}
+                              if (n < 1) {slideIndex = slides.length}
+                              for (i = 0; i < slides.length; i++) {
+                                  slides[i].style.display = "none";
+                              }
+                              for (i = 0; i < dots.length; i++) {
+                                  dots[i].className = dots[i].className.replace(" active", "");
+                              }
+                              slides[slideIndex-1].style.display = "block";
+                              dots[slideIndex-1].className += " active";
+                            }
+                            </script>
+
+  <!-- Next and previous buttons -->
+  <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+  <button class="next" onclick="plusSlides(1)">&#10095;</button>
+</div>
+<br>
+
+                      </div>
+                    </div>
+              </div>
+
+<!-- This is the Input Validator-->
+
+
+              <div class="universal-container">
+                  <h3>Input Validator</h3>
+                    <div class="content">
+                      <div class="input-validator">
+                        <form onsubmit="return validate()" method="post" class="form">
+                          Number: <input type="text" name="num1" className="num1"/> <br/>
+                          Repeat: <input type="text" name="num2" className="num2"/> <br/>
+                          <input type="submit" value="Submit" />
+                        </form>
+
+                        <script>
+                          function validate() {
+                            var n1 = document.getElementsByClassName("num1")
+                            var n2 = document.getElementsByClassName("num2")
+
+                            if (n1.value != "" && n2.value != "") {
+                              if (n1.value == n2.value){
+                                alert ("Those values match!")
+                              }
+                            }
+                            else {
+                              alert("Those values do not match.")
+                            }
+                          }
+                        </script>
+                      </div>
+                    </div>
+              </div>
+
+
+<!-- End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Put in a second slider area for particle effect-->
+
+<!-- FOOTER --->
+
+<div class="footer">
+  <p class="footer-text">Aadi Anjaria</p>
+
+</div>
+
+  </body>
+</html>
